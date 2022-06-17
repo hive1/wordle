@@ -13,7 +13,7 @@ public class Wordle
     // instance variables
     private JFrame game = new JFrame("Wordle");
     private JButton [] buttons = new JButton [30];
-    private String letter = "";
+    //private String letter = "";
     private int guessCount = 0;
     private boolean gameOver = false;
     private boolean playAgain = true;
@@ -80,8 +80,7 @@ public class Wordle
 
     // ask the player for a guess and make sure it's valid
     public void getGuess() {
-
-        Scanner scan = new Scanner(System.in);
+        //Scanner scan = new Scanner(System.in);
 
         while (true) {
             guess = JOptionPane.showInputDialog("Enter guess #" + (guessCount+1) + ": must be 5 characters, all letters").toUpperCase();
@@ -111,21 +110,30 @@ public class Wordle
 
     // compare the guess to the secret word and change the box colors accordingly
     public void checkLetters() {
+//        for(int i = 0; i < guess.length(); i++) {
+//            char e = guess.charAt(i);
+//
+//            if(e == secretWord.charAt(i)) {
+//                System.out.println(i);
+//                buttons[guessCount * 5 + i].setBackground(Color.green);
+//            } else if (secretWord.indexOf(e) > 0) {
+//                buttons[guessCount * 5 + i].setBackground(Color.orange);
+//            } else {
+//                buttons[guessCount * 5 + 0].setBackground(Color.gray);
+//                buttons[guessCount * 5 + 1].setBackground(Color.gray);
+//                buttons[guessCount * 5 + 2].setBackground(Color.gray);
+//                buttons[guessCount * 5 + 3].setBackground(Color.gray);
+//                buttons[guessCount * 5 + 4].setBackground(Color.gray);
+//            }
+//        }
+        
+        
         for(int i = 0; i < guess.length(); i++) {
-            char e = guess.charAt(i);
-
-            if(e == secretWord.charAt(i)) {
-                System.out.println(i);
-                buttons[guessCount * 5 + i].setBackground(Color.green);
-            } else if (secretWord.indexOf(e) > 0) {
-                buttons[guessCount * 5 + i].setBackground(Color.orange);
-            } else {
-                buttons[guessCount * 5 + 0].setBackground(Color.gray);
-                buttons[guessCount * 5 + 1].setBackground(Color.gray);
-                buttons[guessCount * 5 + 2].setBackground(Color.gray);
-                buttons[guessCount * 5 + 3].setBackground(Color.gray);
-                buttons[guessCount * 5 + 4].setBackground(Color.gray);
-            }
+        	char x = guess.charAt(i);
+        	
+        	if(secretWord.charAt(i) == x) {
+        		buttons[]
+        	}
         }
     }
 
