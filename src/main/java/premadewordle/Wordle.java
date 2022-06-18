@@ -74,7 +74,6 @@ public class Wordle
         catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        secretWord = "STINK";
     }
 
 
@@ -89,11 +88,10 @@ public class Wordle
                     char m = guess.charAt(i);
 
                     if(!(Character.isLetter(m))) {
-                        System.out.println("aye this dont work :(");
+                        System.out.println("Please retry input");
                         continue;
                     }
                 }
-                System.out.println("this works!!");
                 break;
             }
         }
@@ -109,30 +107,19 @@ public class Wordle
     }
 
     // compare the guess to the secret word and change the box colors accordingly
-    public void checkLetters() {
-//        for(int i = 0; i < guess.length(); i++) {
-//            char e = guess.charAt(i);
-//
-//            if(e == secretWord.charAt(i)) {
-//                System.out.println(i);
-//                buttons[guessCount * 5 + i].setBackground(Color.green);
-//            } else if (secretWord.indexOf(e) > 0) {
-//                buttons[guessCount * 5 + i].setBackground(Color.orange);
-//            } else {
-//                buttons[guessCount * 5 + 0].setBackground(Color.gray);
-//                buttons[guessCount * 5 + 1].setBackground(Color.gray);
-//                buttons[guessCount * 5 + 2].setBackground(Color.gray);
-//                buttons[guessCount * 5 + 3].setBackground(Color.gray);
-//                buttons[guessCount * 5 + 4].setBackground(Color.gray);
-//            }
-//        }
-        
-        
+    public void checkLetters() {        
         for(int i = 0; i < guess.length(); i++) {
         	char x = guess.charAt(i);
         	
         	if(secretWord.charAt(i) == x) {
-        		buttons[]
+        		// if the letter is in the correct position
+        		buttons[guessCount * 5 + i].setBackground(Color.green);
+        	} else if (secretWord.indexOf(x) > 0) {
+        		// if the letter is in the word but not in the correct position
+        		buttons[guessCount * 5 + i].setBackground(Color.orange);
+        	} else {
+        		// here was the bug
+        		; 
         	}
         }
     }
