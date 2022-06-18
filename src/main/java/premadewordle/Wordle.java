@@ -79,7 +79,7 @@ public class Wordle
 
     // ask the player for a guess and make sure it's valid
     public void getGuess() {
-        //Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
 
         while (true) {
             guess = JOptionPane.showInputDialog("Enter guess #" + (guessCount+1) + ": must be 5 characters, all letters").toUpperCase();
